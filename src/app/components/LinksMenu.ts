@@ -135,7 +135,7 @@ export const chartConfig = {
   }
 } satisfies ChartConfig
 
-export const chartCircleDataExample = {
+export const chartCircleConfig= {
   visitors: {
     label: "Visitors",
   },
