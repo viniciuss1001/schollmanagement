@@ -12,7 +12,7 @@ const MenuComponent = () => {
           </span>
           {item.items.map((itemlink)=> (
             <Link key={itemlink.label} href={itemlink.href}
-            className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2"
+            className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 p-2 hover: hover:animate-pulse rounded-md"
             >
               <Image alt="" src={itemlink.icon} width={20} height={20}/>
               <span className="hidden lg:block">{itemlink.label}</span>
