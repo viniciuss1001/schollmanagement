@@ -58,6 +58,7 @@ const chartConfig = {
   }, [])
 
   return (
+    <div className="h-auto">
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart - Donut with Text</CardTitle>
@@ -122,6 +123,7 @@ const chartConfig = {
         </div>
       </CardFooter>
     </Card>
+    </div>
   )
 }
 export default ChartCircleComponent

@@ -1,3 +1,4 @@
+import AreaChartFinance from "@/app/components/AreaChartFinance"
 import BarCharts from "@/app/components/BarChart"
 import CountChart from "@/app/components/CountChart"
 
@@ -24,13 +25,12 @@ const AdminPage = () => {
                     </div>
                 </div>
                 {/**big chart */}
-                <div>
-
+                <div className="w-full h-[500px] p-2">
+                <AreaChartFinance />
                 </div>
             </div>
             {/*right */}
             <div className="w-full lg:w-1/3">
-                r
             </div>
         </div>
     )
