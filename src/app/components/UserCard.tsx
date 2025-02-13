@@ -11,7 +11,7 @@ import { UserRound } from 'lucide-react'
 
 const UserCard = ({ type }: { type: string }) => {
     return (
-        <Card className='rounded-2xl odd:bg-blue-700 even:bg-slate-700 p-4 flex-1 min-[132px]:'>
+        <Card className='rounded-lg shadow-sm p-4 flex-1 min-[132px]:'>
             <CardHeader className='flex justify-between w-full flex-col'>
                 <CardTitle className='text-2xl'>
                     {type[0].toLocaleUpperCase()}{type.slice(1)}

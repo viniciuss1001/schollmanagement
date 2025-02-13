@@ -45,7 +45,7 @@ const chartConfig = {
 
 const AreaChartFinance = () => {
     return (
-        <div className='flex p-3 mt-3'>
+        <div className=''>
             <Card>
                 <CardHeader>
                     <CardTitle>Area Chart - Gradient</CardTitle>

@@ -1,8 +1,13 @@
+import AnnouncementsComponent from "@/app/components/Announcements"
 import AreaChartFinance from "@/app/components/AreaChartFinance"
 import BarCharts from "@/app/components/BarChart"
+import CalendarComponent from "@/app/components/CalendarComponent"
 import CountChart from "@/app/components/CountChart"
+import EventLisComponent from "@/app/components/EventLis"
 
 import UserCard from "@/app/components/UserCard"
+
+
 
 const AdminPage = () => {
     return (
@@ -26,11 +31,14 @@ const AdminPage = () => {
                 </div>
                 {/**big chart */}
                 <div className="w-full h-[500px] p-2">
-                <AreaChartFinance />
+                    <AreaChartFinance />
                 </div>
             </div>
             {/*right */}
             <div className="w-full lg:w-1/3">
+                <CalendarComponent />
+                <EventLisComponent />
+                <AnnouncementsComponent />
             </div>
         </div>
     )

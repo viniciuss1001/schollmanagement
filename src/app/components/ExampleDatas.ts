@@ -160,3 +160,42 @@ export const chartCircleConfig= {
     color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig
+
+export const EventsDataExample = [
+  {
+    id: 1,
+    title: "evento 1", 
+    time: '12:00PM - 14:00AM',
+    description: 'descrição 2'
+  },
+  {
+    id:2,
+    title: "evento 2", 
+    time: '12:00PM - 14:00AM',
+    description: 'descrição 2'
+  },
+  {
+    id: 3,
+    title: "evento 3", 
+    time: '12:00PM - 14:00AM',
+    description: 'descrição 2'
+  }
+]
+
+export const AnnouncementsDataExample = [
+  {
+    id: 1,
+    title: 'título 1',
+    description: 'descrição do evento'
+  },
+  {
+    id: 2,
+    title: 'título 2',
+    description: 'descrição do evento'
+  },
+  {
+    id: 2,
+    title: 'título 1',
+    description: 'descrição do evento'
+  }
+]

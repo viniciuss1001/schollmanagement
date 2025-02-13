@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { menuItems } from "./LinksMenu"
+import { menuItems } from "./ExampleDatas"
 import Image from "next/image"
 
 const MenuComponent = () => {
