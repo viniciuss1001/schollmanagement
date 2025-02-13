@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { AnnouncementsDataExample as announcements } from './ExampleDatas'
+import { AnnouncementsDataExample as announcements } from '../utils/ExampleDatas'
 const AnnouncementsComponent = () => {
   return (
     <div className='p-4 rounded-md shadow-sm border mt-4'>

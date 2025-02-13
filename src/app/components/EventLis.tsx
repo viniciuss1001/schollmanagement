@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { EventsDataExample as events } from "@/app/components/ExampleDatas"
+import { EventsDataExample as events } from "@/app/utils/ExampleDatas"
 import Image from "next/image"
 
 const EventLisComponent = () => {

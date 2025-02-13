@@ -15,8 +15,8 @@ import {
     ChartTooltip,
     ChartTooltipContent
 } from '@/components/ui/chart'
-import { chartDataExample } from './ExampleDatas'
-import { chartConfig } from './ExampleDatas'
+import { chartDataExample } from '../utils/ExampleDatas'
+import { chartConfig } from '../utils/ExampleDatas'
 
 
 const BarCharts = () => {

@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { menuItems } from "./ExampleDatas"
+import { menuItems } from "../utils/ExampleDatas"
 import Image from "next/image"
+import { userRole } from "../utils/data"
 
 const MenuComponent = () => {
   return (
@@ -10,14 +11,18 @@ const MenuComponent = () => {
           <span className="hidden lg:block font-light my-4">
             {item.title}
           </span>
-          {item.items.map((itemlink) => (
-              <Link key={itemlink.label} href={itemlink.href}
-                className="flex justify-center items-center lg:justify-start gap-4 p-2 hover: hover:animate-pulse rounded-md"
-              >
-                <Image alt="" src={itemlink.icon} width={20} height={20} />
-                <span className="hidden lg:block">{itemlink.label}</span>
-              </Link>
-          ))}
+          {item.items.map((itemlink) => {
+            if(itemlink.visible.includes(userRole)){
+              return(
+                <Link key={itemlink.label} href={itemlink.href}
+                  className="flex justify-center items-center lg:justify-start gap-4 p-2 hover: hover:border rounded-md"
+                >
+                  <Image alt="" src={itemlink.icon} width={20} height={20} />
+                  <span className="hidden lg:block">{itemlink.label}</span>
+                </Link>
+            )
+            }
+          })}
         </div>
       ))}
     </div>
