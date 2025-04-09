@@ -1,53 +1,51 @@
 import PaginationComponent from '@/app/components/Pagination'
 import TableComponent from '@/app/components/Table'
 import TableSearch from '@/app/components/TableSearch'
-import { teachersData, userRole } from '@/app/utils/data'
+import { examsData, resultsData, teachersData, userRole } from '@/app/utils/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-type Teacher = {
+type Result = {
   id: number
-  teacherId: string
-  name: string 
-  email?: string
-  photo?: string
-  phone: string
-  subjects: string[]
-  classes: string[]
-  address: string
+  subject: string
+  class: string
+  teacher: string
+  student: string
+  type: "exam" | "assignment"
+  date: string
+  score: number
 }
 
 
 const columns = [
   {
-    header: "Info",
-    accessor: "info",
+    header: "Subject Name",
+    accessor: "name",
   },
   {
-    header: "Teacher ID",
-    accessor: "teacherId",
+    header: "Student",
+    accessor: "student",
+  },
+  {
+    header: "Score",
+    accessor: "score",
     className: "hidden md:table-cell",
   },
   {
-    header: "Subjects",
-    accessor: "subjects",
+    header: "Teacher",
+    accessor: "teacher",
     className: "hidden md:table-cell",
   },
   {
-    header: "Classes",
-    accessor: "classes",
+    header: "Class",
+    accessor: "class",
     className: "hidden md:table-cell",
   },
   {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Address",
-    accessor: "address",
-    className: "hidden lg:table-cell",
+    header: "Date",
+    accessor: "date",
+    className: "hidden md:table-cell",
   },
   {
     header: "Actions",
@@ -55,46 +53,33 @@ const columns = [
   },
 ];
 
+const ResultListPage = () => {
 
-const TeacherListPage = () => {
-
-  const renderRow = (item: Teacher) => (
+  const renderRow = (item: Result) => (
     <tr key={item.id} className='border-b border-gray-200 even:bg-slate-50/90 hover:bg-slate-100'>
       <td className='flex items-center gap-4 p-4'>
-        <Image src={item.photo ?? ''} alt='' width={40} height={40} className='md:hidden xl:block size-10 rounded-full object-cover'/>
-        <div className='flex flex-col'>
-          <h3 className='font-semibold'>
-            {item.name}
-          </h3>
-          <p className='text-xs text-muted-foreground'>
-            {item?.email}
-          </p>
-        </div>
-      </td>
-      <td className='hidden md:table-cell'>
-        {item.teacherId}
-      </td>
-      <td className='hidden md:table-cell'>
-        {item.subjects.join(',')}
-      </td>
-      <td className='hidden md:table-cell'>
-        {item.classes.join(',')}
-      </td>
-      <td className='hidden md:table-cell'>
-        {item.phone}
-      </td>
-      <td className='hidden md:table-cell'>
-        {item.address}
+        {item.subject}
       </td>
       <td>
+        {item.student}
+      </td>
+      <td className='hidden md:table-cell'>
+        {item.score}
+      </td>
+      <td className='hidden md:table-cell'>
+        {item.teacher}
+      </td>
+      <td className='hidden md:table-cell'>
+        {item.class}
+      </td>
+      <td className='hidden md:table-cell'>
+        {item.date}
+      </td>
+
+      <td>
         <div className='flex items-center gap-2'>
-          <Link href={`/list/teachers/${item.id}`}>
-          <button className='size-7 flex items-center justify-center rounded-full bg-transparent hover:bg-slate-100'>
-            <Image src='/view.png' alt='' width={16} height={16}/>
-          </button>
-           </Link>
-           {userRole === 'admin' && <button className='size-7 flex items-center justify-center rounded-full bg-transparent hover:bg-red-200'>
-            <Image src='/delete.png' alt='' width={16} height={16}/>
+          {userRole === 'admin' && <button className='size-7 flex items-center justify-center rounded-full bg-transparent hover:bg-red-200'>
+            <Image src='/delete.png' alt='' width={16} height={16} />
           </button>}
         </div>
       </td>
@@ -125,11 +110,11 @@ const TeacherListPage = () => {
 
       </div>
       {/* LIST */}
-      <TableComponent colums={columns} renderRow={renderRow} data={teachersData}/>
+      <TableComponent colums={columns} renderRow={renderRow} data={resultsData} />
       {/* PAGINATION */}
-        <PaginationComponent />
+      <PaginationComponent />
     </div>
   )
 }
 
-export default TeacherListPage
+export default ResultListPage
