@@ -3,7 +3,7 @@ import AreaChartFinance from "@/app/components/AreaChartFinance"
 import BarCharts from "@/app/components/BarChart"
 import CalendarComponent from "@/app/components/CalendarComponent"
 import CountChart from "@/app/components/CountChart"
-import EventLisComponent from "@/app/components/EventLis"
+import EventListComponent from "@/app/components/EventList"
 
 import UserCard from "@/app/components/UserCard"
 
@@ -37,7 +37,7 @@ const AdminPage = () => {
             {/*right */}
             <div className="w-full lg:w-1/3">
                 <CalendarComponent />
-                <EventLisComponent />
+                <EventListComponent />
                 <AnnouncementsComponent />
             </div>
         </div>

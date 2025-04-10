@@ -3,7 +3,7 @@ import React from 'react'
 import { EventsDataExample as events } from "@/app/utils/ExampleDatas"
 import Image from "next/image"
 
-const EventLisComponent = () => {
+const EventListComponent = () => {
   return (
     <div> <div className="flex flex-col gap-4 p-4 border shadow-sm rounded-md">
     <div className="flex items-center justify-between">
@@ -24,4 +24,4 @@ const EventLisComponent = () => {
   )
 }
 
-export default EventLisComponent
+export default EventListComponent
