@@ -1,7 +1,7 @@
 import AnnouncementsComponent from "@/app/components/Announcements"
 import BigCalendarComponent from "@/app/components/BigCalendar"
 import CalendarComponent from "@/app/components/CalendarComponent"
-import EventLisComponent from "@/app/components/EventLis"
+import EventListComponent from "@/app/components/EventList"
 
 const StudentPage = () => {
     return(
@@ -16,7 +16,7 @@ const StudentPage = () => {
             {/*right */}
             <div className="w-full xl:w-1/3">
                 <CalendarComponent/>
-                <EventLisComponent />
+                <EventListComponent />
                 <AnnouncementsComponent/>
             </div>
         </div>

@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-type Result = {
+type Event = {
   id: number
   subject: string
   class: string
@@ -19,43 +19,38 @@ type Result = {
 
 
 const columns = [
-  {
-    header: "Subject Name",
-    accessor: "name",
-  },
-  {
-    header: "Student",
-    accessor: "student",
-  },
-  {
-    header: "Score",
-    accessor: "score",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Teacher",
-    accessor: "teacher",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Class",
-    accessor: "class",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Date",
-    accessor: "date",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Actions",
-    accessor: "action",
-  },
-];
+	{
+	  header: "Title",
+	  accessor: "title",
+	},
+	{
+	  header: "Class",
+	  accessor: "class",
+	},
+	{
+	  header: "Date",
+	  accessor: "date",
+	  className: "hidden md:table-cell",
+	},
+	{
+	  header: "Start Time",
+	  accessor: "startTime",
+	  className: "hidden md:table-cell",
+	},
+	{
+	  header: "End Time",
+	  accessor: "endTime",
+	  className: "hidden md:table-cell",
+	},
+	{
+	  header: "Actions",
+	  accessor: "action",
+	},
+ ];
 
-const ResultListPage = () => {
+const EventsListPage = () => {
 
-  const renderRow = (item: Result) => (
+  const renderRow = (item: Event) => (
     <tr key={item.id} className='border-b border-gray-200 even:bg-slate-50/90 hover:bg-slate-100'>
       <td className='flex items-center gap-4 p-4'>
         {item.subject}
@@ -117,4 +112,4 @@ const ResultListPage = () => {
   )
 }
 
-export default ResultListPage
+export default EventsListPage
